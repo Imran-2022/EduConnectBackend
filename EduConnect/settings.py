@@ -31,6 +31,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = ["https://educonnect-egne.onrender.com"]
+CSRF_ALLOWED_ORIGINS = ["https://educonnect-egne.onrender.com"]
+CORS_ORIGINS_WHITELIST = ["https://educonnect-egne.onrender.com"]
 
 
 # Application definition
