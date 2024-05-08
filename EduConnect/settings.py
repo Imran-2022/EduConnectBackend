@@ -32,7 +32,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = ["https://educonnect-egne.onrender.com"]
-CSRF_ALLOWED_ORIGINS = ["https://educonnect-egne.onrender.com","http://localhost:5173"]
+CSRF_ALLOWED_ORIGINS = ["https://educonnect-egne.onrender.com"]
 CORS_ORIGINS_WHITELIST = ["https://educonnect-egne.onrender.com"]
 
 
@@ -67,7 +67,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'EduConnect.urls'
 CORS_ORIGIN_ALLOW_ALL = True
-CSRF_TRUSTED_ORIGINS = ['http://localhost:5173']
+CSRF_TRUSTED_ORIGINS = ['http://localhost:5173','https://educonnect-drf.netlify.app/']
 
 TEMPLATES = [
     {
