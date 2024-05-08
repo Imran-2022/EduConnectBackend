@@ -32,7 +32,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = ["https://educonnect-egne.onrender.com"]
-CSRF_ALLOWED_ORIGINS = ["https://educonnect-egne.onrender.com"]
+CSRF_ALLOWED_ORIGINS = ["https://educonnect-egne.onrender.com","http://localhost:5173"]
 CORS_ORIGINS_WHITELIST = ["https://educonnect-egne.onrender.com"]
 
 
@@ -51,9 +51,11 @@ INSTALLED_APPS = [
     'tutor',
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -64,6 +66,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'EduConnect.urls'
+CORS_ORIGIN_ALLOW_ALL = True
+CSRF_TRUSTED_ORIGINS = ['http://localhost:5173']
 
 TEMPLATES = [
     {
