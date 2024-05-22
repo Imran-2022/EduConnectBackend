@@ -67,7 +67,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'EduConnect.urls'
 CORS_ORIGIN_ALLOW_ALL = True
-CSRF_TRUSTED_ORIGINS = ['http://localhost:5173','https://educonnect-drf.netlify.app/']
+CSRF_TRUSTED_ORIGINS = ['http://localhost:5173','https://educonnect-drf.netlify.app/',"https://educonnectbackend-buct.onrender.com"]
 
 TEMPLATES = [
     {
