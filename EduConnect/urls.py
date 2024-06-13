@@ -15,6 +15,7 @@ urlpatterns = [
     path('filter/',include('filter.urls')),
     path('tuition_post/',include('tuition.urls')),
     path('tutor/',include('tutor.urls')),
+    path('application/', include('application.urls')),
 ]
 
 urlpatterns+= static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

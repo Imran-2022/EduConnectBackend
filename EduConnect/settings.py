@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'tutor',
     'rest_framework',
     'rest_framework.authtoken',
-    'corsheaders'
+    'corsheaders',
+    'application'
 ]
 
 MIDDLEWARE = [
@@ -147,3 +148,33 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = env("EMAIL")
 EMAIL_HOST_PASSWORD = env("EMAIL_PASSWORD")
+
+# CORS settings
+CORS_ALLOWED_ORIGINS = [
+    "https://educonnectbackend-buct.onrender.com",
+    "http://localhost:5173",
+    "https://educonnect-drf.netlify.app",
+]
+
+# CSRF settings
+CSRF_TRUSTED_ORIGINS = [
+    "https://educonnectbackend-buct.onrender.com",
+    "http://localhost:5173",
+    "https://educonnect-drf.netlify.app",
+]
+
+# Ensure authentication and permissions are correctly configured in your views and serializers
+# Example:
+# from rest_framework.permissions import IsAuthenticated
+# permission_classes = [IsAuthenticated]
+
+# Ensure EMAIL and EMAIL_PASSWORD are correctly set in your .env file for email backend
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',  # Ensure TokenAuthentication is included
+        'rest_framework.authentication.SessionAuthentication',  # Include SessionAuthentication if needed
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+}

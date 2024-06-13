@@ -12,6 +12,8 @@ from django.contrib.auth import authenticate,login,logout
 from rest_framework.authtoken.models import Token
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import AllowAny
+
 # for sending email 
 
 from django.core.mail import EmailMultiAlternatives
@@ -27,6 +29,7 @@ class TutorViewset(viewsets.ModelViewSet):
 
 class UserRegistrationApiView(APIView):
     serializer_class=serializers.RegistrationSerializer
+    permission_classes = [AllowAny]  # Allow access without authentication
     
     def post(self,request):
         serializer = self.serializer_class(data=request.data)
@@ -66,6 +69,7 @@ def activate(request,uid64,token):
 
 
 class UserLoginApiView(APIView):
+    permission_classes = [AllowAny]  # Allow access without authentication
     def post(self,request):
         serializer=serializers.UserLoginSerializer(data=self.request.data)
         if serializer.is_valid():
@@ -87,6 +91,7 @@ class UserLoginApiView(APIView):
 
 class UserLogoutView(APIView):
     permission_classes = [IsAuthenticated]
+    
 
     def GET(self, request):
         # Delete the auth token
