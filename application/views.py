@@ -24,7 +24,7 @@ class ApplicationCreateApiView(APIView):
 
             data = {
                 'user': user.id,
-                'tuition_post': tuition_post.id
+                'tuition_post': tuition_post.id,
             }
 
             serializer = self.serializer_class(data=data)
@@ -35,3 +35,15 @@ class ApplicationCreateApiView(APIView):
         
         except Exception as e:
             return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+
+class UserApplicationsApiView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        user = request.user
+        applications = Application.objects.filter(user=user)
+        serializer = ApplicationSerializer(applications, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    
+    
