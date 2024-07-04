@@ -44,7 +44,7 @@ class UserRegistrationApiView(APIView):
             uid=urlsafe_base64_encode(force_bytes(user.pk))
             # unique url tori kre
             print('uid:',uid)
-            confirm_link=f"http://127.0.0.1:8000/tutor/activate/{uid}/{token}"
+            confirm_link=f"https://educonnectbackend-buct.onrender.com/tutor/activate/{uid}/{token}"
             email_subject="Confirm Your Email"
             email_body=render_to_string('confirm_email.html',{'confirm_link':confirm_link})
             email=EmailMultiAlternatives(email_subject,'',to={user.email})
@@ -64,10 +64,10 @@ def activate(request,uid64,token):
     if user is not None and default_token_generator.check_token(user,token):
         user.is_active=True
         user.save()
-        return redirect('login')
+        return redirect('https://educonnect-drf.netlify.app/login')
     
     else: 
-        return redirect('register')
+        return redirect('https://educonnect-drf.netlify.app/register')
 
 
 class UserLoginApiView(APIView):
