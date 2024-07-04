@@ -97,3 +97,17 @@ class UserLogoutView(APIView):
         # Delete the auth token
         request.user.auth_token.delete()
         return Response({'detail': 'Logout successful'}, status=status.HTTP_200_OK)
+    
+
+
+class UserTutorProfileApiView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        user = request.user
+        try:
+            tutor = models.Tutor.objects.get(user=user)
+            serializer = serializers.TutorSerializer(tutor)
+            return Response(serializer.data)
+        except models.Tutor.DoesNotExist:
+            return Response({"detail": "Tutor profile not found"}, status=status.HTTP_404_NOT_FOUND)
