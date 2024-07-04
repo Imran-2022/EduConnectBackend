@@ -23,6 +23,8 @@ from django.template.loader import render_to_string
 # Create your views here.
 
 class TutorViewset(viewsets.ModelViewSet):
+    permission_classes = [AllowAny]  # Allow access without authentication
+
     queryset = models.Tutor.objects.all()
     serializer_class = serializers.TutorSerializer
 
