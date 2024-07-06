@@ -9,6 +9,18 @@ class TutorSerializer(serializers.ModelSerializer):
         model = models.Tutor
         fields='__all__'
 
+    def create(self, validated_data):
+        return models.Tutor.objects.create(**validated_data)
+
+    def update(self, instance, validated_data):
+        instance.image = validated_data.get('image', instance.image)
+        instance.mobile_no = validated_data.get('mobile_no', instance.mobile_no)
+        instance.description = validated_data.get('description', instance.description)
+        instance.experience = validated_data.get('experience', instance.experience)
+        instance.educational_qualification = validated_data.get('educational_qualification', instance.educational_qualification)
+        instance.save()
+        return instance
+
 class RegistrationSerializer(serializers.ModelSerializer):
 
     # comfirm password ar jonno ekta serializer toire krte hbe..! 

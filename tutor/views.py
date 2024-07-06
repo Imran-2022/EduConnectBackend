@@ -113,3 +113,23 @@ class UserTutorProfileApiView(APIView):
             return Response(serializer.data)
         except models.Tutor.DoesNotExist:
             return Response({"detail": "Tutor profile not found"}, status=status.HTTP_404_NOT_FOUND)
+        
+    def post(self, request):
+        serializer = serializers.TutorSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(user=request.user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def put(self, request):
+        user = request.user
+        try:
+            tutor = models.Tutor.objects.get(user=user)
+        except models.Tutor.DoesNotExist:
+            return Response({"detail": "Tutor profile not found"}, status=status.HTTP_404_NOT_FOUND)
+
+        serializer = serializers.TutorSerializer(tutor, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
