@@ -133,3 +133,11 @@ class UserTutorProfileApiView(APIView):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    def delete(self, request, id):
+        try:
+            tutor = models.Tutor.objects.get(id=id)  # Fetching by ID
+            tutor.delete()  # Delete the tutor profile
+            return Response(status=status.HTTP_204_NO_CONTENT)  # No content response on successful deletion
+        except models.Tutor.DoesNotExist:
+            return Response({"detail": "Tutor profile not found"}, status=status.HTTP_404_NOT_FOUND)

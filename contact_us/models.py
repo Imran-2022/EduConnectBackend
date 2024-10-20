@@ -5,6 +5,7 @@ from django.db import models
 class ContactUs(models.Model):
     name = models.CharField(max_length=30)
     phone= models.CharField(max_length=12)
+    email = models.EmailField(default="example@gmail.com")
     problem=models.TextField()
     class Meta:
          verbose_name = 'Contact Us'

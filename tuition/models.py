@@ -31,14 +31,23 @@ class TuitionPost(models.Model):
         ('PhD', 'PhD'),
         ('Other', 'Other Qualification'),
     ]
+     
+    ACTIVE_STATUS_CHOICES = [
+        ('active', 'Active'),
+        ('pending', 'Pending'),
+        ('rejected', 'Rejected'),
+    ]
 
     duration = models.CharField(max_length=20, choices=DURATION_CHOICES)
     class_of_student = models.ForeignKey(Filter, on_delete=models.CASCADE)
     days_per_week = models.IntegerField(choices=DAYS_PER_WEEK_CHOICES)
     required_qualification = models.CharField(max_length=20, choices=QUALIFICATION_CHOICES)
     description = models.TextField()
+    subject = models.CharField(max_length=100, default='Not specified')  # Added subject field with default value
+    username = models.CharField(max_length=150,null=True)  # Add username field
+    email = models.EmailField(null=True)  # Allow null values
     creation_time = models.DateTimeField(default=timezone.now)  # Add creation time field
-
+    active = models.CharField(max_length=10, choices=ACTIVE_STATUS_CHOICES, default='pending')  # Add active field
     
     def formatted_creation_time(self):
         return self.creation_time.strftime('%Y-%m-%d')

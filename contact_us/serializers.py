@@ -5,3 +5,6 @@ class ContactUsSerializer(serializers.ModelSerializer):
         model = models.ContactUs
         fields='__all__'
         
+        
+    def create(self, validated_data):
+        return super().create(validated_data)
