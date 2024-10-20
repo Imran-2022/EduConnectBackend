@@ -1,70 +1,78 @@
-# Tuition Media Platform
+##### #Tuition Media Platform  
 
-## Problem Statement
+##### #Problem Statement  
+Finding suitable tuition options is challenging for students and parents, requiring time-consuming searches with uncertain quality. This platform aims to simplify the process by offering transparency, an improved user experience, and efficient management of tuition listings.  
 
-Finding suitable tuition options can be challenging for students and parents, involving time-consuming searches and uncertainties about quality. This project aims to streamline this process by creating a Tuition Media Platform that provides transparency, enhances the user experience, and promotes efficient management of tuition listings.
+##### #Objectives  
+- **User-Friendly Platform**: Intuitive interface for searching and applying for tuition  
+- **Secure User Management**: Registration, authentication, and tutor profile management  
+- **Admin Tools**: Manage tuition listings, applications, and tutor profiles  
+- **Enhanced User Experience**: Filtering, reviews, and application tracking  
+- **Secure Deployment**: Host the platform in a secure environment  
 
-## Objectives
+###### #UI 
 
-1. **User-Friendly Platform**:
-   - Develop an intuitive interface for searching and applying for tuition.
-   
-2. **Secure User Management**:
-   - Implement secure registration, authentication, and profile management features.
-   
-3. **Efficient Admin Tools**:
-   - Empower admins to manage tuition listings, applications, and user profiles efficiently.
-   
-4. **Enhanced User Experience**:
-   - Provide filtering options, reviews, and application tracking to enhance usability.
-   
-5. **Secure Deployment**:
-   - Deploy the platform in a secure hosting environment for reliability and data security.
+##### #Home Page
+<p align="center">
+  <kbd>
+    <img src="https://github.com/user-attachments/assets/c546e7c0-5c51-4543-a7ff-4debb9f4b636" alt="Home Page" style="border: 2px solid black; border-radius: 10px;">
+  </kbd>
+</p>
 
-## System Description
+##### #Available Tuition Page
+<p align="center">
+  <kbd>
+    <img src="https://github.com/user-attachments/assets/6ec8793a-23d9-449c-ad4e-8298882c572b" alt="Available Tuition Page" style="border: 2px solid black; border-radius: 10px;">
+  </kbd>
+</p>
 
-### Features
+##### #Specific Tuition Details Page
+<p align="center">
+  <kbd>
+    <img src="https://github.com/user-attachments/assets/1bec7f81-bf50-490a-8c68-b455282eb156" alt="Specific Tuition Details Page" style="border: 2px solid black; border-radius: 10px;">
+  </kbd>
+</p>
 
-1. **User Registration and Authentication**:
-   - Registration system with email verification for account activation.
-   - Secure login functionality for users.
+##### #Available Tutor Page
+<p align="center">
+  <kbd>
+    <img src="https://github.com/user-attachments/assets/943aae7c-ef07-46d3-910c-c6270803df0c" alt="Available Tutor Page" style="border: 2px solid black; border-radius: 10px;">
+  </kbd>
+</p>
 
-2. **Admin Features**:
-   - Add, edit, or delete tuition listings.
-   - Manage availability and details of tuition options.
+##### #Specific Tutor Details Page
+<p align="center">
+  <kbd>
+    <img src="https://github.com/user-attachments/assets/ccac3ac0-44b0-4de5-9b7c-29b643d0c55c" alt="Specific Tutor Details Page" style="border: 2px solid black; border-radius: 10px;">
+  </kbd>
+</p>
 
-3. **User Profiles**:
-   - Display user information including educational qualifications.
-   - Allow users to manage their profiles and change passwords securely.
+##### #Tuition Post Page
+<p align="center">
+  <kbd>
+    <img src="https://github.com/user-attachments/assets/2f80be60-d7c8-4ddf-bdc9-9e43b0a0dda8" alt="Tuition Post Page" style="border: 2px solid black; border-radius: 10px;">
+  </kbd>
+</p>
 
-4. **Filtering Options**:
-   - Users can filter tuition options based on class or other relevant criteria.
+##### #Contact Page
+<p align="center">
+  <kbd>
+    <img src="https://github.com/user-attachments/assets/c1b97201-eb7f-4c13-8a96-b08922a87fb3" alt="Contact Page" style="border: 2px solid black; border-radius: 10px;">
+  </kbd>
+</p>
 
-5. **Application Process**:
-   - Users can apply for tuition listings.
-   - Admins/parents/students can view all applicants and choose suitable candidates for each tuition.
+##### #Tutor Profile Page
+<p align="center">
+  <kbd>
+    <img src="https://github.com/user-attachments/assets/e5fe7a29-14aa-41f1-ad59-7f7effc2a228" alt="Tutor Profile Page" style="border: 2px solid black; border-radius: 10px;">
+  </kbd>
+</p>
 
-6. **Tuition Reviews**:
-   - Users can leave reviews for tuitions they have attended.
-   - Reviews are allowed only after a user successfully applies for and completes the tuition.
+##### #Project Database
+<p align="center">
+  <kbd>
+    <img src="https://github.com/user-attachments/assets/a4684767-26eb-457c-b22f-7fbc0389d4de" alt="Project Database" style="border: 2px solid black; border-radius: 10px;">
+  </kbd>
+</p>
 
-7. **Deployment and Security**:
-   - Deploy the Tuition Media Platform on a secure hosting platform for reliable access and data security.
-
-## Benefits
-
-1. **For Users (Students/Parents)**:
-   - Easily find and apply for suitable tuition options.
-   - Transparent reviews help in making informed decisions.
-
-2. **For Admins (Educational Providers)**:
-   - Efficiently manage tuition listings and applications.
-   - Enhance service quality based on user feedback.
-
-3. **For the Overall Community**:
-   - Promote education accessibility and quality through a centralized platform.
-   - Facilitate better communication and transparency between users and providers.
-
----
-
-By implementing the Tuition Media Platform, we aim to simplify the process of finding and applying for tuition while promoting transparency, efficiency, and quality in the education sector.
+###### By implementing the Tuition Media Platform, we aim to simplify the process of finding and applying for tuition while promoting transparency, efficiency, and quality in the education sector.
